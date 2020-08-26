@@ -20,6 +20,7 @@ from .timeout_decorator import TimeoutDecorator
 from .environment_decorator import EnvironmentDecorator
 from .retry_decorator import RetryDecorator
 from .aws.batch.batch_decorator import BatchDecorator, ResourcesDecorator
+from .ray.ray_decorator import RayDecorator
 from .aws.step_functions.step_functions_decorator import StepFunctionsInternalDecorator
 from .conda.conda_step_decorator import CondaStepDecorator
 
@@ -29,6 +30,7 @@ STEP_DECORATORS = [CatchDecorator,
                    ResourcesDecorator,
                    RetryDecorator,
                    BatchDecorator,
+                   RayDecorator,
                    StepFunctionsInternalDecorator,
                    CondaStepDecorator]
 
