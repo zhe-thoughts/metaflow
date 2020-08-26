@@ -69,7 +69,7 @@ def main(ctx):
         short_help = {'tutorials': 'Browse and access metaflow tutorials.',
                       'configure': 'Configure metaflow to access the cloud.',
                       'status': 'Display the current working tree.',
-                      'help': 'Show all available commands to run.'}
+                      'help': 'Show all available commands to run zhe-metaflow.'}
 
         echo('Commands:', bold=False)
 
