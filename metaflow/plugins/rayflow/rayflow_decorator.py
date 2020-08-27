@@ -23,7 +23,7 @@ except:  # noqa E722
     from urllib.parse import urlparse
 
 
-class RayResourcesDecorator(StepDecorator):
+class RayFlowResourcesDecorator(StepDecorator):
     """
     Step decorator to specify the resources needed when executing this step.
     This decorator passes this information along to Batch when requesting resources
@@ -45,14 +45,14 @@ class RayResourcesDecorator(StepDecorator):
     memory : int
         Memory size (in MB) required for this step. Defaults to 4000
     """
-    name = 'rayresources'
+    name = 'rayflowresources'
     defaults = {
         'cpu': '1',
         'gpu': '0',
         'memory': '4000',
     }
 
-class RayDecorator(StepDecorator):
+class RayflowDecorator(StepDecorator):
     """
     Step decorator to specify that this step should execute on Batch.
     This decorator indicates that your step should execute on Batch. Note that you can
@@ -87,7 +87,7 @@ class RayDecorator(StepDecorator):
         IAM role that Batch can use to access S3. Defaults to the one determined by the environment
         variable METAFLOW_ECS_S3_ACCESS_IAM_ROLE
     """
-    name = 'ray'
+    name = 'rayflow'
     defaults = {
         'cpu': '1',
         'gpu': '0',
@@ -98,10 +98,10 @@ class RayDecorator(StepDecorator):
     run_time_limit = None
 
     def __init__(self, attributes=None, statically_defined=False):
-        super(RayDecorator, self).__init__(attributes, statically_defined)
+        super(RayflowDecorator, self).__init__(attributes, statically_defined)
 
     def step_init(self, flow, graph, step, decos, environment, datastore, logger):
         self.logger = logger
         self.environment = environment
         self.step = step
-        print('At Ray step!')
+        print('At Rayflow step!')
