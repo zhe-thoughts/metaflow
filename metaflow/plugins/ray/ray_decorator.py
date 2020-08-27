@@ -98,7 +98,7 @@ class RayDecorator(StepDecorator):
     run_time_limit = None
 
     def __init__(self, attributes=None, statically_defined=False):
-        super(RayhDecorator, self).__init__(attributes, statically_defined)
+        super(RayDecorator, self).__init__(attributes, statically_defined)
 
     def step_init(self, flow, graph, step, decos, environment, datastore, logger):
         self.logger = logger
