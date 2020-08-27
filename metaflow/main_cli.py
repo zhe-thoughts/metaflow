@@ -81,7 +81,7 @@ def main(ctx):
 
             echo('%s' % desc)
 
-@main.command(help='Show all available commands.')
+@main.command(help='Show all available commands for Zhe.')
 @click.pass_context
 def help(ctx):
     print(ctx.parent.get_help())
